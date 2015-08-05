@@ -36,7 +36,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'bcrypt'
-gem 'pry'
+gem 'pry-rails'
 gem 'pry-nav'
 
 group :development, :test do
