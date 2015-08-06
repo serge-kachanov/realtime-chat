@@ -1,6 +1,11 @@
 class MessagesController < ApplicationController
+
   def new
-    @message = Message.new
+    if current_user == nil
+      redirect_to new_session_path, :notice => 'You need to log in to start chatting'
+    else
+      @message = Message.new
+    end
   end
 
   def create
