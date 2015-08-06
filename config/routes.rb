@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/new'
+
   get 'sessions/new'
 
   get "sign_up" => "users#new", :as => "sign_up"
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :messages
 
   root :to => "users#new"
 end

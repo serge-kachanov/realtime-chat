@@ -1,0 +1,15 @@
+%h1 Message
+= form_for @message do |f|
+  - if @message.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - for message in @message.errors.full_messages
+          %li= message
+  %p
+    = f.label :text
+    %br/
+    = f.text_field :text
+    %br/
+  %p.button= f.submit
+
