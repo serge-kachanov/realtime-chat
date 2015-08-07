@@ -1,15 +1,10 @@
-%h1 Message
-= form_for @message do |f|
-  - if @message.errors.any?
-    .error_messages
-      %h2 Form is invalid
-      %ul
-        - for message in @message.errors.full_messages
-          %li= message
-  %p
-    = f.label :text
-    %br/
-    = f.text_field :text
-    %br/
-  %p.button= f.submit
-
+.main
+  .row
+    %p
+      .col-md-4.chat{id: "user"}
+        .messages.well
+        %form.form-inline
+          .form-group
+            %input.form-control{:placeholder => "Lets chat!" }
+          %button.btn.btn-success
+            submit

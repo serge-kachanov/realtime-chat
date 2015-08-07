@@ -12,13 +12,20 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = current_user
     if @message.save
+      WebsocketRails[:messages].trigger('new', message)
       render json: { success: true }
     end
   end
 
+  def message
+    {
+      text: @message.text,
+      user: @message.user.name,
+    }
+  end
 
   def message_params
-    params.require(:message).permit(:text, :user_id)
+    params.require(:message).permit(:text)
   end
 
 end

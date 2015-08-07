@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require message
+//= require websocket_rails/main
 //= require_tree .

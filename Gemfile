@@ -38,6 +38,8 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bcrypt'
 gem 'pry-rails'
 gem 'pry-nav'
+gem 'websocket-rails', github: 'moaa/websocket-rails', branch: 'threadsocket-rails'
+gem 'websocket-rails-js', github: 'websocket-rails/websocket-rails-js', branch: 'sub_protocols'
 gem 'puma'
 
 group :development, :test do
