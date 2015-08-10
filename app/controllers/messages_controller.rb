@@ -1,11 +1,17 @@
 class MessagesController < ApplicationController
 
-  def new
-    if current_user == nil
-      redirect_to new_session_path, :notice => 'You need to log in to start chatting'
-    else
+  before_filter :check_session
+
+  def index
+    @messages = Message.all
+  end
+
+  def new_websockets
       @message = Message.new
-    end
+  end
+
+  def new_shortpoll
+      @message = Message.new
   end
 
   def create
