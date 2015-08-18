@@ -3,7 +3,8 @@ class MessagesController < ApplicationController
   before_filter :check_session
 
   def index
-    @messages = Message.all
+    @messages = Message.where("created_at > ?", 3.seconds.ago)
+    render json: @messages
   end
 
   def new_websockets

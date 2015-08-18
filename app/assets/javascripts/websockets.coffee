@@ -3,7 +3,6 @@ $(document).ready ->
   channel = dispatcher.subscribe('messages')
   channel.bind 'new', (message) ->
     $('#user .messages').append '<p>'+ message.user + ': ' + message.text + '</p>'
-    $('#' + message.user + ' .messages p:last-child').css 'color', 'orange'
     return
 
   $('.chat button').click (event) ->
@@ -19,4 +18,3 @@ $(document).ready ->
           text: $('#' + id + ' input').val()
     return
   return
-

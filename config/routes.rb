@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources :messages
   resources :home
 
-  root :to => "users#new"
+  root :to => "home#index"
 end
