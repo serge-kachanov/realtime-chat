@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'messages/websockets' => 'messages#new_websockets'
   get 'messages/shortpoll' => 'messages#new_shortpoll'
+  get 'messages/streaming' => 'messages#new_streaming'
 
   get 'home' => 'home#index'
 
@@ -12,7 +13,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :messages
+  resources :messages do
+    collection do
+      get :events
+    end
+  end
+
   resources :home
 
   root :to => "home#index"

@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require websockets
 //= require shortpoll
+//= require streaming
 //= require websocket_rails/main
 //= require_tree .
 //
