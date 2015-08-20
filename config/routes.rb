@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'messages/websockets' => 'messages#new_websockets'
   get 'messages/shortpoll' => 'messages#new_shortpoll'
   get 'messages/streaming' => 'messages#new_streaming'
+  get 'messages/actioncable' => 'messages#new_actioncable'
 
   get 'home' => 'home#index'
 

@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'active_model_serializers'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
-
+gem 'actioncable', github: 'rails/actioncable'
 gem 'bcrypt'
 gem 'pry-rails'
 gem 'pry-nav'

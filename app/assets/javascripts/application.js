@@ -16,6 +16,7 @@
 //= require shortpoll
 //= require streaming
 //= require websocket_rails/main
+//= require_tree/channels .
 //= require_tree .
 //
 

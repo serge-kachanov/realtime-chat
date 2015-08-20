@@ -12,6 +12,10 @@ class MessagesController < ApplicationController
       @message = Message.new
   end
 
+  def new_actioncable
+      @message = Message.new
+  end
+
   def new_shortpoll
       @message = Message.new
   end
@@ -25,6 +29,9 @@ class MessagesController < ApplicationController
     @message.user = current_user
     if @message.save
       WebsocketRails[:messages].trigger('new', message)
+      ActionCable.server.broadcast 'message',
+        text: @message.text,
+        user: @message.user.name
       render json: { success: true }
     end
   end
