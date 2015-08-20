@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
   def events
     response.headers["Content-Type"] = "text/event-stream"
     start = Time.now
-    100.times do
+    10.times do
       Message.uncached do
         Message.where('created_at > ?', start).each do |msg|
           msg.username = msg.user.name
