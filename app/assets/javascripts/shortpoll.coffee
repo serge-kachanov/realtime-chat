@@ -2,8 +2,8 @@ setInterval ->
 	$.get '/messages',
 		(data) -> 
 			console.log(data)
-			$("#message").text("");
+			$("#messages-shortpoll").text("");
 
 			for message in data
-				$("#user .message").append( "<p>" + message.user + ": " + message.text + "</p>")
+				$("#user .messages-shortpoll").append( "<p>" + message.user + ": " + message.text + "</p>")
 , 3000

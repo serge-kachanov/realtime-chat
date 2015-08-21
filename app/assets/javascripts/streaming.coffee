@@ -5,6 +5,6 @@ source.addEventListener 'message', (e) ->
 
   console.log(message)
   
-  $('#user .msg').append '<p>'+ message.username + ': ' + message.text + '</p>'
+  $('#user .messages-streaming').append '<p>'+ message.username + ': ' + message.text + '</p>'
 
     
