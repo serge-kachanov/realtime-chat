@@ -5,6 +5,6 @@ source.addEventListener 'message', (e) ->
 
   console.log(message)
   
-  $('#user .messages-streaming').append '<p>'+ message.username + ': ' + message.text + '</p>'
+  $('#user .messages-streaming').append '<p>'+ "[" + message.created_at.slice(11,19) + "] " + message.username + ': ' + message.text + '</p>'
 
     

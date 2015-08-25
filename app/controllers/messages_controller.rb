@@ -31,7 +31,8 @@ class MessagesController < ApplicationController
       WebsocketRails[:messages].trigger('new', message)
       ActionCable.server.broadcast 'message',
         text: @message.text,
-        user: @message.user.name
+        user: @message.user.name,
+        time: @message.created_at.strftime('%H:%M:%S')
       render json: { success: true }
     end
   end
@@ -60,6 +61,7 @@ class MessagesController < ApplicationController
     {
       text: @message.text,
       user: @message.user.name,
+      time: @message.created_at.strftime('%H:%M:%S')
     }
   end
 
