@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require websockets
-//= require shortpoll
-//= require streaming
+//= stub websockets
+//= stub shortpoll
+//= stub streaming
 //= require websocket_rails/main
 //= require_tree/channels .
 //= require_tree .
